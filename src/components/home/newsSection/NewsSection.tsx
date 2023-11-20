@@ -3,13 +3,10 @@ import Dynamic from "next/dynamic";
 import styles from "@/styles/home/newsSection/newsSection.module.scss";
 const CardNews = Dynamic(() => import("../../cards/CardNews"));
 const SeeOtherButton = Dynamic(() => import("../../buttons/SeeAllButton"));
-import getNews from "@/app/api/getNews";
 import { HeaderMenuType } from "@/models/HeaderMenuType";
 import Loading from "@/components/utils/Loading";
 
-async function NewsSection() {
-  const dataNews = await getNews();
-
+function NewsSection({ dataNews }: { dataNews: any }) {
   return (
     <section id="berita" className={styles["container-bbs"]}>
       <div className={styles["menu-container-bbs"]}>

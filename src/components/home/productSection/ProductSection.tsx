@@ -3,11 +3,8 @@ import { HeaderMenuType } from "@/models/HeaderMenuType";
 import SliderProducts from "@/components/sliders/SliderProducts";
 import SeeAllButton from "@/components/buttons/SeeAllButton";
 import Loading from "@/components/utils/Loading";
-import getPopularProducts from "@/app/api/getPopularProducts";
 
-async function ProductSection() {
-  const dataProducts = await getPopularProducts();
-
+function ProductSection({ dataProducts }: { dataProducts: any[] }) {
   return (
     <section id="produk" className={styles["container-bbs"]}>
       <div className={styles["products-bbs"]}>

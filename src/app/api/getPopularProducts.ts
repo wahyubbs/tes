@@ -1,4 +1,5 @@
 import { ethosViewApi } from "./ethosAPI";
+export const revalidate = 5;
 
 async function getPopularProducts() {
   try {

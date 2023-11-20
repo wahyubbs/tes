@@ -1,11 +1,8 @@
 import styles from "@/styles/home/mitraSection/mitraSection.module.scss";
 import SliderMitra from "@/components/sliders/SliderMitra";
-import { getMitra } from "@/app/api/getMitra";
 import Loading from "@/components/utils/Loading";
 
-async function MitraSection() {
-  const dataMitra = await getMitra();
-
+function MitraSection({ dataMitra }: { dataMitra: any[] }) {
   return (
     <section id="mitra" className={styles["container-bbs"]}>
       <div className={styles["mitra-container-bbs"]}>

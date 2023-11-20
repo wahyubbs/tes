@@ -40,6 +40,7 @@ function CardProduct({
           onError={handleOnError}
           alt="produk"
           fill={true}
+          priority={true}
           sizes="100vw"
           src={`${
             process.env.NEXT_PUBLIC_DEVELOPMENT_URL_IMG

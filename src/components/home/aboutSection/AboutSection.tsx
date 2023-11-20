@@ -1,15 +1,11 @@
 import Image from "next/image";
 
 import styles from "@/styles/home/aboutSection/aboutSection.module.scss";
-import { getAboutUs } from "@/app/api/getAboutUs";
 import { HeaderMenuType } from "../../../models/HeaderMenuType";
 import SeeAllButton from "@/components/buttons/SeeAllButton";
 import Loading from "@/components/utils/Loading";
 
-export const dynamic = "force-dynamic";
-
-async function AboutSection() {
-  const dataAbout = await getAboutUs();
+function AboutSection({ dataAbout }: { dataAbout: any[] }) {
   return (
     <section id="tentangKami" className={styles["container-bbs"]}>
       <div className={styles["content-bbs"]}>

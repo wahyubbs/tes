@@ -78,6 +78,7 @@ function SliderMitra({ dataMitra }: { dataMitra: any[] }) {
               rel="noopener noreferrer"
             >
               <Image
+                priority={true}
                 onError={handleOnError}
                 src={`${
                   process.env.NEXT_PUBLIC_DEVELOPMENT_URL_IMG
@@ -95,6 +96,7 @@ function SliderMitra({ dataMitra }: { dataMitra: any[] }) {
                 onError={handleOnError}
                 src={data.image}
                 fill={true}
+                priority={true}
                 sizes="100vw"
                 alt="partnership"
               />
