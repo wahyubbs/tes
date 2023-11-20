@@ -19,6 +19,7 @@ async function HeaderMenu({
         <div className={styles["background-bbs"]}>
           {bgImage && (
             <Image
+              priority={true}
               alt={"headermenu"}
               src={`${
                 process.env.NEXT_PUBLIC_DEVELOPMENT_URL_IMG

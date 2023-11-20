@@ -47,6 +47,7 @@ function Partners() {
           ) : (
             <Link className={styles["img-bbs"]} key={index} href="/nolink">
               <Image
+                priority={true}
                 onError={handleOnError}
                 src={data.image}
                 fill={true}
