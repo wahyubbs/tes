@@ -1,0 +1,66 @@
+@use "@/styles/mixins" as *;
+
+.container-bbs {
+  width: 100%;
+  background-color: #87bd3d;
+}
+
+.content-bbs {
+  width: 90%;
+  display: flex;
+  margin: 0 auto;
+  padding: 0.416rem 0;
+  justify-content: flex-end;
+  p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #ffffff;
+  }
+}
+
+.row-bbs {
+  cursor: pointer;
+  display: flex;
+  gap: 0.833rem;
+  align-items: center;
+  font-size: 14px;
+  line-height: 18px;
+  h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.71em;
+    line-height: 1.55em;
+    color: #ffffff;
+  }
+  a {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1em;
+    color: #ffffff;
+  }
+}
+
+@include respond(extraSmall) {
+  .row-bbs {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+@include respond(small) {
+}
+
+@include respond(medium) {
+}
+
+@include respond(large) {
+}
+@include respond(extraLarge) {
+}
+
+@include respond(wide) {
+}

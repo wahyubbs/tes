@@ -1,0 +1,51 @@
+@use "@/styles/mixins" as *;
+
+.left-arrow {
+  float: left;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin-left: -3px;
+  margin-top: auto;
+  margin-bottom: auto;
+  cursor: pointer;
+}
+
+.right-arrow {
+  float: right;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin-right: -3px;
+  margin-top: auto;
+  margin-bottom: auto;
+  cursor: pointer;
+}
+
+@include respond(extraSmall) {
+  .inactive-bbs {
+    display: none;
+  }
+}
+
+@include respond(small) {
+  .inactive-bbs {
+    display: none;
+  }
+}
+
+@include respond(medium) {
+  .inactive-bbs {
+    display: none;
+  }
+}
+
+@include respond(large) {
+}
+@include respond(extraLarge) {
+}
+
+@include respond(wide) {
+}

@@ -1,0 +1,92 @@
+@use "@/styles/mixins" as *;
+
+.container-bbs {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.498);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.img-wrapper-bbs {
+  height: 80%;
+  width: 50%;
+
+  position: relative;
+  display: flex;
+  img {
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: contain;
+   
+  }
+  
+ 
+}
+
+.close-btn-bbs {
+margin-left: auto;
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 100;
+}
+@include respond(extraSmall) {
+  .img-wrapper-bbs {
+    height: 80%;
+    width: 80%;
+    img {
+      height: fit-content !important;
+      width: 100% !important;
+    }
+  }
+}
+
+@include respond(small) {
+  .img-wrapper-bbs {
+    height: 80%;
+    width: 80%;
+    img {
+      height: fit-content !important;
+      width: 100% !important;
+    }
+  }
+}
+
+@include respond(medium) {
+  .img-wrapper-bbs {
+    height: 80%;
+    width: 80%;
+    img {
+      height: fit-content !important;
+      width: 100% !important;
+    }
+  }
+}
+
+@include respond(large) {
+  .img-wrapper-bbs {
+    height: 80%;
+    width: 80%;
+    img {
+      height: fit-content !important;
+      width: 100% !important;
+    }
+  }
+}
+
+@include respond(extraLarge) {
+}
+
+@include respond(wide) {
+}

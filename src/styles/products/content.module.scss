@@ -1,0 +1,195 @@
+@use "@/styles/mixins" as *;
+
+.container-bbs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.search-box-bbs {
+  width: 50%;
+  display: flex;
+  padding: 0.31rem 0.91rem;
+  background: #ededed;
+  border-radius: 10px;
+  padding: 0.31rem 0.91rem 0.31rem 0.91rem;
+  align-items: center;
+  font-size: 20px;
+  color: #619a3f;
+  gap: 0.33rem;
+  p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 19px;
+    letter-spacing: 0.003em;
+    color: #bababa;
+  }
+  input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 19px;
+    letter-spacing: 0.003em;
+    background: #ededed;
+  }
+}
+
+.image-product-bbs {
+  width: 100%;
+  aspect-ratio: 2/1.4;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  img {
+    aspect-ratio: 2/1.4;
+    object-fit: contain;
+    height: fit-content !important;
+  }
+}
+
+.date-container-bbs {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.3em;
+  color: #619a3f;
+}
+
+.title-bbs {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.7em;
+  line-height: 1.2em;
+  color: #2f2f2f;
+}
+
+.sub-title-bbs {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.14em;
+  line-height: 1.3em;
+  color: #2f2f2f;
+}
+
+.description-bbs {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.5em;
+  color: #1a1a1a;
+  & > * {
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 1em !important;
+    line-height: 1.5em !important;
+    color: #1a1a1a !important;
+    font-family: var(--font-roboto) !important;
+    & > * {
+      font-style: normal !important;
+      font-weight: 400 !important;
+      font-size: 1em !important;
+      line-height: 1.5em !important;
+      color: #1a1a1a !important;
+      font-family: var(--font-roboto) !important;
+      & > * {
+        font-style: normal !important;
+        font-weight: 400 !important;
+        font-size: 1em !important;
+        line-height: 1.5em !important;
+        color: #1a1a1a !important;
+        font-family: var(--font-roboto) !important;
+        & > * {
+          font-style: normal !important;
+          font-weight: 400 !important;
+          font-size: 1em !important;
+          line-height: 1.5em !important;
+          color: #1a1a1a !important;
+          font-family: var(--font-roboto) !important;
+          & > * {
+            font-style: normal !important;
+            font-weight: 400 !important;
+            font-size: 1em !important;
+            line-height: 1.5em !important;
+            color: #1a1a1a !important;
+            font-family: var(--font-roboto) !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.other-products-container-bbs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  .title-bbs {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.714em;
+    line-height: 1.2em;
+    color: #619a3f;
+  }
+
+  .other-products-bbs {
+    justify-content: center;
+    gap: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 50%));
+  }
+
+  .seeAll-btn-container {
+    align-self: center;
+  }
+}
+
+@include respond(extraSmall) {
+  .container-bbs {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .search-box-bbs {
+    width: 100%;
+  }
+}
+
+@include respond(small) {
+  .search-box-bbs {
+    width: 100%;
+
+    font-size: 16px;
+    p {
+      font-size: 12px;
+    }
+    input {
+      font-size: 12px;
+    }
+  }
+}
+
+@include respond(medium) {
+  .search-box-bbs {
+    width: 100%;
+
+    font-size: 18px;
+    p {
+      font-size: 14px;
+    }
+    input {
+      font-size: 14px;
+    }
+  }
+}
+
+@include respond(large) {
+}

@@ -1,0 +1,62 @@
+@use "@/styles/mixins" as *;
+
+.other-news-container-bbs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+
+  .title-bbs {
+    align-self: flex-start;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.714em;
+    line-height: 1.2em;
+    color: #619a3f;
+  }
+  .other-news-bbs {
+    width: 100%;
+    justify-content: center;
+    gap: 0.833rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 50%));
+  }
+}
+
+@include respond(extraSmall) {
+  .other-news-container-bbs {
+    padding-top: 10px;
+    gap: 15px;
+    .other-news-bbs {
+      grid-template-columns: repeat(1, minmax(0, 95%));
+    }
+  }
+}
+
+@include respond(small) {
+  .other-news-container-bbs {
+    padding-top: 10px;
+    gap: 15px;
+    .other-news-bbs {
+      grid-template-columns: repeat(1, minmax(0, 95%));
+    }
+  }
+}
+
+@include respond(medium) {
+  .other-news-container-bbs {
+    padding-top: 10px;
+    gap: 15px;
+    .other-news-bbs {
+      grid-template-columns: repeat(1, minmax(0, 95%));
+    }
+  }
+}
+
+@include respond(large) {
+}
+@include respond(extraLarge) {
+}
+
+@include respond(wide) {
+}

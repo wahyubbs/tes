@@ -1,0 +1,113 @@
+@use "@/styles/mixins" as *;
+
+.box-bbs {
+  flex: 1 1 0;
+  background: #87bd3d;
+  border-radius: 0.833rem;
+  padding: 0.833rem 0.416rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff !important;
+  h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5em;
+    line-height: 1.2em;
+    color: #ffffff !important;
+    margin-left: 0.416rem;
+    font-family: var(--font-roboto) !important;
+  }
+  .description-bbs {
+    background: #619a3f;
+    border-radius: 0.833rem;
+    padding: 0.625rem;
+    height: 100%;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    font-size: 1em !important;
+    line-height: 1.3em !important;
+    color: #ffffff !important;
+    font-family: var(--font-roboto) !important;
+    ul > * {
+      margin-left: 1.5em;
+    }
+    ol > * {
+      margin-left: 1.5em;
+    }
+    span {
+      font-style: normal !important;
+      font-weight: 700 !important;
+      font-size: 1em !important;
+      line-height: 1.3em !important;
+      color: #ffffff !important;
+      font-family: var(--font-roboto) !important;
+    }
+    & > * {
+      font-style: normal !important;
+      font-weight: 700 !important;
+      font-size: 1em !important;
+      line-height: 1.3em !important;
+      color: #ffffff !important;
+      font-family: var(--font-roboto) !important;
+      & > * {
+        font-style: normal !important;
+        font-weight: 700 !important;
+        font-size: 1em !important;
+        line-height: 1.3em !important;
+        color: #ffffff !important;
+        font-family: var(--font-roboto) !important;
+      }
+      & > * {
+        font-style: normal !important;
+        font-weight: 700 !important;
+        font-size: 1em !important;
+        line-height: 1.3em !important;
+        color: #ffffff !important;
+        font-family: var(--font-roboto) !important;
+      }
+    }
+  }
+}
+
+@include respond(extraSmall) {
+  .box-bbs {
+    flex: none;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+@include respond(small) {
+  .box-bbs {
+    flex: none;
+    font-size: 13px;
+    line-height: 17px;
+  }
+}
+
+@include respond(medium) {
+  .box-bbs {
+    flex: none;
+
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+@include respond(large) {
+  .box-bbs {
+    flex: none;
+
+    font-size: 15px;
+    line-height: 19px;
+  }
+}
+
+@include respond(extraLarge) {
+}
+
+@include respond(wide) {
+}

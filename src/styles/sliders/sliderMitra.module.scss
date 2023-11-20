@@ -1,0 +1,43 @@
+@use "@/styles/mixins" as *;
+
+.sliders-bbs {
+  width: 90%;
+
+  & :global(.slick-slide) {
+    div:first-child {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+}
+
+.img-bbs {
+  width: 80% !important;
+  height: 150px !important;
+  position: relative;
+  display: flex !important;
+  justify-content: center;
+  img {
+    margin: 0 auto;
+    object-fit: contain;
+  }
+}
+
+@include respond(extraSmall) {
+}
+
+@include respond(small) {
+}
+
+@include respond(medium) {
+}
+
+@include respond(large) {
+}
+
+@include respond(extraLarge) {
+}
+
+@include respond(wide) {
+}

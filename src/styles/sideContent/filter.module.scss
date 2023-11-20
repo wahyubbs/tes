@@ -1,0 +1,107 @@
+@use "@/styles/mixins" as *;
+
+.filter-container-bbs {
+  display: flex;
+  width: 100%;
+  align-self: flex-start;
+  gap: 20px;
+}
+
+.search-box-bbs {
+  width: 50%;
+  display: flex;
+  padding: 7.5px 22px;
+  background: #ededed;
+  border-radius: 10px;
+  padding: 7.5px 22.5px 7.5px 22.5px;
+  align-items: center;
+  font-size: 20px;
+  color: #619a3f;
+  gap: 8px;
+  p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 19px;
+    letter-spacing: 0.003em;
+    color: #bababa;
+  }
+  input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 19px;
+    letter-spacing: 0.003em;
+    background: #ededed;
+  }
+}
+
+.dropdown-container-bbs {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  label {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #619a3f;
+  }
+  select {
+    padding: 7.5px 10px;
+    background: #ededed;
+    border-radius: 10px;
+    border-style: solid;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 19px;
+    letter-spacing: 0.003em;
+    color: #737373;
+  }
+}
+
+@include respond(extraSmall) {
+  .filter-container-bbs {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .search-box-bbs {
+    width: 90%;
+  }
+}
+
+@include respond(small) {
+  .filter-container-bbs {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .search-box-bbs {
+    width: 90%;
+  }
+}
+
+@include respond(medium) {
+  .filter-container-bbs {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .search-box-bbs {
+    width: 90%;
+  }
+}
+
+@include respond(large) {
+}
+
+@include respond(extraLarge) {
+}
+
+@include respond(wide) {
+}

@@ -1,0 +1,56 @@
+@use "@/styles/mixins" as *;
+
+.container-bbs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+.mitra-container-bbs {
+  width: 100%;
+  background: #d8e6cf;
+  border: 3px solid #619a3f;
+  border-bottom: 0;
+  padding: 1.66rem 0 2.66rem 0;
+  border-radius: 2rem 2rem 0px 0px;
+  display: flex;
+  gap: 1.66rem;
+  flex-direction: column;
+  align-items: center;
+
+  .title-bbs {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.875rem;
+    line-height: 2rem;
+    letter-spacing: 0.03em;
+    color: #619a3f;
+  }
+
+  .slider-container-bbs {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@include respond(extraSmall) {
+}
+
+@include respond(small) {
+}
+
+@include respond(medium) {
+}
+
+@include respond(large) {
+}
+
+@include respond(extraLarge) {
+}
+
+@include respond(wide) {
+}

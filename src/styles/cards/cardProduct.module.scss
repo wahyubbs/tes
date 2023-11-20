@@ -1,0 +1,197 @@
+@use "@/styles/mixins" as *;
+
+.container-active-bbs {
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  border-radius: 0.833rem;
+  background-color: aqua;
+  justify-content: flex-start;
+  filter: drop-shadow(0px 12px 48px rgba(0, 0, 0, 0.1))
+    drop-shadow(0px 3.62px 14.47px rgba(0, 0, 0, 0.0652))
+    drop-shadow(0px 1.5px 6.01px rgba(0, 0, 0, 0.05))
+    drop-shadow(0px 0.54px 2.17px rgba(0, 0, 0, 0.0348));
+
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform: scale(1);
+}
+
+.container-bbs {
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  border-radius: 0.833rem;
+  background-color: aqua;
+  justify-content: flex-start;
+  filter: drop-shadow(0px 12px 48px rgba(0, 0, 0, 0.1))
+    drop-shadow(0px 3.62px 14.47px rgba(0, 0, 0, 0.0652))
+    drop-shadow(0px 1.5px 6.01px rgba(0, 0, 0, 0.05))
+    drop-shadow(0px 0.54px 2.17px rgba(0, 0, 0, 0.0348));
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform: scale(0.8);
+}
+
+.image-container-bbs {
+  width: 100%;
+  aspect-ratio: 2/1.2;
+  position: relative;
+  border-radius: 0.833rem 0.833rem 0 0;
+  overflow: hidden;
+  background-color: white;
+  .category-bbs {
+    z-index: 2;
+    top: 0;
+    margin-top: 0.833rem;
+    margin-left: 0.833rem;
+    position: absolute;
+    padding: 0.25rem 0.75rem;
+    background: #87bd3d;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 0.666rem;
+    letter-spacing: 0.003em;
+    color: #ffffff;
+    border: 1.5px solid #87bd3d;
+    border-radius: 0.333rem;
+  }
+  img {
+    object-fit: contain !important;
+    aspect-ratio: 2/1.2;
+    height: fit-content !important;
+  }
+}
+
+.content-container-bbs {
+  width: 100%;
+  margin-top: -0.8rem;
+  background: #ffffff;
+  border-radius: 0.833rem;
+  padding: 0.833rem 1.04rem;
+  display: flex;
+  gap: 0.416rem;
+  font-size: 14px;
+  flex-direction: column;
+  z-index: 2;
+
+  .tag-container-bbs {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.33em;
+    color: #619a3f;
+  }
+
+  .title-bbs {
+    font-weight: 700;
+    font-size: 1.33em;
+    white-space:inherit ;
+    overflow-wrap: break-word ; 
+    line-height: 1.4em;
+    min-height: 4ch;
+    display: flex;
+    align-items: center;
+   
+    font-family: var(--font-roboto) !important;
+    color: #2f2f2f;
+  }
+
+  .description-bbs {
+    min-height: 11ch;
+    p {
+      display: block; /* or inline-block */
+
+      word-wrap: break-word;
+      overflow: hidden;
+      max-height: 5.2em;
+
+      font-size: 1em !important;
+      line-height: 1.33em !important;
+      color: #1a1a1a !important;
+      font-family: var(--font-roboto) !important;
+    }
+  }
+}
+
+@include respond(extraSmall) {
+  .container-bbs {
+    width: 80%;
+  }
+  .container-bbs,
+  .container-active-bbs {
+    pointer-events: all;
+  }
+
+  .more-btn-bbs {
+    display: none;
+  }
+  .tag-container-bbs {
+    display: none;
+  }
+}
+
+@include respond(small) {
+  .container-bbs {
+    width: 80%;
+  }
+
+  .container-bbs,
+  .container-active-bbs {
+    pointer-events: all;
+  }
+
+  .more-btn-bbs {
+    display: none;
+  }
+  .tag-container-bbs {
+    display: none;
+  }
+}
+
+@include respond(medium) {
+  .container-bbs {
+    width: 80%;
+  }
+
+  .container-bbs,
+  .container-active-bbs {
+    pointer-events: all;
+  }
+
+  .more-btn-bbs {
+    display: none;
+  }
+  .tag-container-bbs {
+    display: none;
+  }
+}
+
+@include respond(large) {
+  .container-active-bbs {
+    pointer-events: all;
+  }
+
+  .more-btn-bbs {
+    display: none;
+  }
+  .tag-container-bbs {
+    display: none;
+  }
+}
+
+@include respond(extraLarge) {
+  .tag-container-bbs {
+    display: none;
+  }
+}
+
+@include respond(wide) {
+}

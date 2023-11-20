@@ -1,0 +1,113 @@
+@use "@/styles/mixins" as *;
+
+.search-container-bbs {
+  width: 100%;
+  height: fit-content;
+  background: #d8e6cf;
+  border-radius: 0.833rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.416rem;
+  padding: 0.833rem 1.25rem;
+  position: relative;
+  font-size: 15px;
+  line-height: 19px;
+  h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.6em;
+    line-height: 1.2em;
+    text-align: center;
+    color: #619a3f;
+    &::before {
+      content: "";
+      width: 85%;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin-top: 2.4em;
+      margin-left: auto;
+      margin-right: auto;
+      position: absolute;
+      height: 2px;
+      background-color: #619a3f;
+    }
+  }
+}
+
+.search-box-bbs {
+  width: 100%;
+  padding: 0.31rem 0.93rem 0.31rem 0.93rem;
+  gap: 0.33rem;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 0.416rem;
+  margin-top: 0.833rem;
+  color: #619a3f;
+
+  input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1em;
+    line-height: 1.2em;
+    letter-spacing: 0.003em;
+    color: #1a1a1a;
+  }
+}
+
+@include respond(extraSmall) {
+  .search-container-bbs {
+    font-size: 12px;
+    line-height: 16px;
+    h1 {
+      &::before {
+        margin-top: 2em;
+      }
+    }
+  }
+}
+
+@include respond(small) {
+  .search-container-bbs {
+    font-size: 14px;
+    line-height: 18px;
+    h1 {
+      &::before {
+        margin-top: 2em;
+      }
+    }
+  }
+}
+
+@include respond(medium) {
+  .search-container-bbs {
+    h1 {
+      &::before {
+        margin-top: 2em;
+      }
+    }
+  }
+}
+
+@include respond(large) {
+  .search-container-bbs {
+    h1 {
+      &::before {
+        margin-top: 2em;
+      }
+    }
+  }
+}
+@include respond(extraLarge) {
+  .search-container-bbs {
+    h1 {
+      &::before {
+        margin-top: 2em;
+      }
+    }
+  }
+}

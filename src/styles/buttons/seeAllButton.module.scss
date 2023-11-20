@@ -1,0 +1,39 @@
+@use "@/styles/mixins" as *;
+
+.btn-bbs {
+  pointer-events: all;
+  cursor: pointer;
+  padding: 0.3125rem 0.9375rem;
+  background: #ffffff;
+  border: 2px solid #619a3f;
+  border-radius: 0.416rem;
+  color: #619a3f;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1em;
+  line-height: 1em;
+  letter-spacing: 0.003em;
+  width: fit-content;
+  &:hover {
+    background-color: #619a3f;
+    color: white;
+  }
+}
+
+@include respond(extraSmall) {
+}
+
+@include respond(small) {
+}
+
+@include respond(medium) {
+}
+
+@include respond(large) {
+}
+
+@include respond(extraLarge) {
+}
+
+@include respond(wide) {
+}

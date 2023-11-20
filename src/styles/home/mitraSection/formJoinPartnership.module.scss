@@ -1,0 +1,75 @@
+@use "@/styles/mixins" as *;
+
+.form-join-bbs {
+  display: flex;
+  width: 100%;
+  font-size: 14px;
+  line-height: 18px;
+  input {
+    border-width: 3px 0px 3px 3px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 0.41rem 0 0 0.41rem;
+    max-width: 350px;
+    min-width: 150px;
+    width: 80%;
+    height: 40px;
+    background: white;
+    padding: 0.29rem 0.5rem;
+  }
+  button {
+    cursor: pointer;
+    transform: translateX(-0.416rem);
+    padding: 0.31rem 0.93rem;
+    background: #87bd3d;
+    border: 2px solid #87bd3d;
+    border-radius: 0.416rem;
+    color: white;
+  }
+}
+
+@include respond(extraSmall) {
+  .form-join-bbs {
+    font-size: 12px;
+    line-height: 16px;
+
+    input {
+      width: 90%;
+    }
+  }
+}
+
+@include respond(small) {
+  .form-join-bbs {
+    input {
+      width: 90%;
+    }
+  }
+}
+
+@include respond(medium) {
+  .form-join-bbs {
+    input {
+      width: 90%;
+    }
+  }
+}
+
+@include respond(large) {
+  .form-join-bbs {
+    input {
+      width: 90%;
+    }
+  }
+}
+
+@include respond(extraLarge) {
+  .form-join-bbs {
+    input {
+      width: 90%;
+    }
+  }
+}
+
+@include respond(wide) {
+}

@@ -1,0 +1,46 @@
+@use "@/styles/mixins" as *;
+
+.products-container-bbs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.products-bbs {
+  width: 100%;
+  justify-content: center;
+  gap: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 50%));
+}
+
+@include respond(extraSmall) {
+  .products-bbs {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 45%));
+  }
+}
+
+@include respond(small) {
+  .products-bbs {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 45%));
+  }
+}
+
+@include respond(medium) {
+  .products-bbs {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 45%));
+  }
+}
+
+@include respond(large) {
+}
+
+@include respond(extraLarge) {
+}
+
+@include respond(wide) {
+}

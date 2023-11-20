@@ -1,0 +1,40 @@
+@use "@/styles/mixins" as *;
+
+.container-bbs {
+  width: 100%;
+  position: relative;
+  height: 100vh;
+  background-color: #737373;
+}
+
+@include respond(extraSmall) {
+  .container-bbs {
+    height: 231px;
+  }
+}
+
+@include respond(small) {
+  .container-bbs {
+    height: 240px;
+  }
+}
+
+@include respond(medium) {
+  .container-bbs {
+    height: 338px;
+  }
+}
+
+@include respond(large) {
+  .container-bbs {
+    height: 433px;
+  }
+}
+@include respond(extraLarge) {
+  .container-bbs {
+    height: 559px;
+  }
+}
+
+@include respond(wide) {
+}

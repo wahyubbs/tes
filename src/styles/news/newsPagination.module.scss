@@ -1,0 +1,58 @@
+@use "@/styles/mixins" as *;
+
+.news-bbs {
+  display: grid;
+  gap: 1.25rem;
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 48%));
+  justify-content: center;
+}
+
+.pagination-bbs {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-size: 1rem;
+  list-style-type: none;
+  li {
+    a {
+      cursor: pointer;
+      padding: 0.25rem 0.43rem;
+      border: 1.5px solid #619a3f;
+      border-radius: 0.333rem;
+      color: #619a3f;
+      &:hover {
+        background-color: #619a3f;
+        color: white;
+      }
+    }
+  }
+}
+
+.active-page-bbs {
+  a {
+    background-color: #619a3f;
+    color: white !important;
+  }
+}
+
+@include respond(extraSmall) {
+  .news-bbs {
+    grid-template-columns: repeat(1, minmax(0, 98%));
+  }
+}
+
+@include respond(small) {
+  .news-bbs {
+    grid-template-columns: repeat(1, minmax(0, 98%));
+  }
+}
+
+@include respond(medium) {
+  .news-bbs {
+    grid-template-columns: repeat(1, minmax(0, 98%));
+  }
+}
+
+@include respond(large) {
+}

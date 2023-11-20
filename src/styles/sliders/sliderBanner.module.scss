@@ -1,0 +1,164 @@
+@use "@/styles/mixins" as *;
+
+.slide-bbs {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  img {
+    max-width: 100%;
+    object-fit: cover;
+  }
+}
+
+.slide-content-container-bbs {
+  cursor: pointer;
+  width: 90%;
+  height: 100%;
+  gap: 0.625rem;
+  margin: 0 auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  justify-content: flex-end;
+  color: white;
+  font-size: 18px;
+}
+
+.slide-content-blur-bbs {
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  bottom: 0;
+  backdrop-filter: blur(5px);
+  mask: linear-gradient(transparent, black 80%);
+  &::after {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.705);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+  }
+}
+
+.tag-bbs {
+  width: fit-content;
+  padding: 0.25rem 0.75rem 0.25rem 0.75rem;
+  background-color: #619a3f;
+  border-radius: 0.33rem;
+  font-size: 12px;
+}
+
+.title-bbs {
+  font-size: 2em;
+  line-height: 1.2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.date-bbs {
+  font-size: 1em;
+}
+
+.status-container-bbs {
+  width: fit-content;
+  bottom: 0;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  padding-bottom: 1.2rem;
+  gap: 0.833rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
+  li {
+    list-style: none;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 3px;
+    padding: 0;
+
+    button {
+      border: none;
+      background: white;
+      color: transparent;
+      cursor: pointer;
+      display: block;
+      height: 0.66em;
+      width: 0.66em;
+      border: solid #619a3f 2px;
+      border-radius: 0.3em;
+      transition: all 200ms;
+    }
+  }
+  & :global(li.slick-active) button {
+    background-color: #619a3f;
+    width: 1.66rem;
+  }
+}
+
+@include respond(extraSmall) {
+  .slide-bbs {
+    height: 231px;
+  }
+  .slide-content-container-bbs {
+    width: 80%;
+    padding: 40px 0;
+    font-size: 14px;
+  }
+}
+
+@include respond(small) {
+  .slide-bbs {
+    height: 240px;
+  }
+
+  .slide-content-container-bbs {
+    width: 80%;
+    padding: 40px 0;
+    font-size: 15px;
+  }
+}
+
+@include respond(medium) {
+  .slide-bbs {
+    height: 338px;
+  }
+
+  .slide-content-container-bbs {
+    width: 80%;
+    padding: 40px 0;
+  }
+}
+
+@include respond(large) {
+  .slide-bbs {
+    height: 433px;
+  }
+
+  .slide-content-container-bbs {
+    width: 80%;
+    padding: 60px 0;
+  }
+}
+@include respond(extraLarge) {
+  .slide-bbs {
+    height: 559px;
+  }
+
+  .slide-content-container-bbs {
+    width: 80%;
+    padding: 60px 0;
+  }
+}
+
+@include respond(wide) {
+}

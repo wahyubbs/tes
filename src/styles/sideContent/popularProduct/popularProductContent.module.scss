@@ -1,0 +1,93 @@
+@use "@/styles/mixins" as *;
+
+.content-bbs {
+  display: flex;
+  gap: 0.416rem;
+  cursor: pointer;
+  align-items: flex-start;
+  font-size: 12px;
+  line-height: 16px;
+  div:first-child {
+    margin-top: 0.833rem;
+  }
+  img {
+    border-radius: 8px;
+  }
+}
+
+.row-bbs {
+  display: flex;
+  gap: 0.204rem;
+  align-items: center;
+}
+
+.col-bbs {
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.204rem;
+  h1 {
+    display: block;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 2.6em; /* (Number of lines you want visible) * (line-height) */
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.75em;
+    line-height: 1.3em;
+    color: #414141;
+    margin: 0;
+    max-width: 100%;
+  }
+  p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.3em;
+    color: #1a1a1a;
+  }
+}
+
+@include respond(extraSmall) {
+  .content-bbs {
+    font-size: 10px;
+    line-height: 14px;
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+@include respond(small) {
+  .content-bbs {
+    font-size: 11px;
+    line-height: 15px;
+    img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+}
+
+@include respond(medium) {
+}
+
+@include respond(large) {
+  .content-bbs {
+    img {
+      width: 80px;
+      height: 80px;
+    }
+    font-size: 10px;
+    line-height: 14px;
+    align-items: center;
+    flex-direction: column;
+  }
+  .col-bbs {
+  }
+}
+@include respond(extraLarge) {
+}

@@ -1,0 +1,56 @@
+@use "@/styles/mixins" as *;
+
+.container-bbs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 60vh;
+}
+
+.mitra-bbs {
+  width: 90%;
+  margin: 0 auto;
+  padding: 60px 0;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+  display: flex;
+}
+.img-bbs {
+  position: relative;
+  width: 250px;
+  height: 150px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  img {
+    margin: 0 auto;
+    object-fit: contain;
+  }
+}
+
+@include respond(extraSmall) {
+  .mitra-bbs {
+    grid-template-columns: repeat(2, minmax(0, 40%));
+  }
+}
+
+@include respond(small) {
+  .mitra-bbs {
+    grid-template-columns: repeat(2, minmax(0, 40%));
+  }
+}
+
+@include respond(medium) {
+  .mitra-bbs {
+    grid-template-columns: repeat(2, minmax(0, 40%));
+  }
+}
+
+@include respond(large) {
+}
+@include respond(extraLarge) {
+}
+
+@include respond(wide) {
+}

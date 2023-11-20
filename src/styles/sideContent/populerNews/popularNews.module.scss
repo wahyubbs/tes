@@ -1,0 +1,79 @@
+@use "@/styles/mixins" as *;
+
+.container-bbs {
+  width: 100%;
+  background: #d8e6cf;
+  border-radius: 0.833rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.833rem;
+  padding: 0.833rem 1.25rem;
+  position: relative;
+  font-size: 12px;
+  line-height: 16px;
+
+  .title-bbs {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2em;
+    line-height: 1.2em;
+    text-align: center;
+    color: #619a3f;
+    margin-bottom: 0.833rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -moz-line-clamp: 1;
+    -ms-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    &::before {
+      content: "";
+      width: 85%;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin-top: 2.2em;
+      margin-left: auto;
+      margin-right: auto;
+      position: absolute;
+      height: 2px;
+      background-color: #619a3f;
+    }
+  }
+}
+
+@include respond(extraSmall) {
+  .container-bbs {
+    font-size: 10px;
+    line-height: 14px;
+
+    .title-bbs {
+      &::before {
+        margin-top: 2em;
+      }
+    }
+  }
+}
+
+@include respond(small) {
+  .container-bbs {
+    font-size: 11px;
+    line-height: 15px;
+
+    .title-bbs {
+      &::before {
+        margin-top: 2em;
+      }
+    }
+  }
+}
+
+@include respond(medium) {
+}
+
+@include respond(large) {
+}
+@include respond(extraLarge) {
+}

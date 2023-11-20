@@ -1,0 +1,19 @@
+.btn-bbs {
+  pointer-events: all;
+  width: 100%;
+  padding: 6px 0;
+  background: #ffffff;
+  border: 1.5px solid #619a3f;
+  border-radius: 8px;
+  margin-top: auto;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.003em;
+  color: #619a3f;
+  &:hover {
+    background-color: #619a3f;
+    color: white;
+  }
+}

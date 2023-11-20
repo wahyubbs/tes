@@ -1,0 +1,12 @@
+.menu-active-bbs {
+  color: #87bd3d !important;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #87bd3d;
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+  }
+}
