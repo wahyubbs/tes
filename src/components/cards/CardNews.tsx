@@ -39,6 +39,7 @@ function CardNews({
           onError={handleOnError}
           alt="news"
           fill={true}
+          priority
           sizes="100vw"
           src={`${
             process.env.NEXT_PUBLIC_DEVELOPMENT_URL_IMG
