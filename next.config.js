@@ -5,9 +5,6 @@ const nextConfig = {
     domains: ["storage.googleapis.com"],
     formats: ["image/avif", "image/webp"],
   },
-  experimental: {
-    serverActions: true,
-  },
 };
 
 module.exports = nextConfig;

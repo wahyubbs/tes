@@ -45,6 +45,7 @@ function ProductsPagination({ limit }: { limit: number }) {
         <div className={styles["products-bbs"]}>
           {dataProducts.data.map((data: any, index: number) => (
             <CardProduct
+              priority={true}
               isResponsive={true}
               key={index}
               isActive={true}

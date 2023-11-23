@@ -10,6 +10,7 @@ function OtherNews({ dataNewsByCat }: { dataNewsByCat: any[] }) {
       <div className={styles["other-news-bbs"]}>
         {dataNewsByCat?.map((data: any, index: number) => (
           <CardNews
+            priority={true}
             key={index}
             status=""
             description={data.isicard}

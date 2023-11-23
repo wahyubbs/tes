@@ -40,28 +40,7 @@ export default function EthosDailyLayout({
 }) {
   return (
     <section id="ethosDaily" className={styles["container-bbs"]}>
-      <HeaderMenu title="ETHOS DAILY" imageURL={"Daily"} path="Ethos Daily" />
-      <div className={styles["content-bbs"]}>
-        <div className={styles["side-content-mobile-bbs"]}>
-          <Search type="news" />
-          {/* <Type useChecklist={false} title="Kategori" dataDropdown={category} /> */}
-        </div>
-        {children}
-        <div className={styles["side-content-bbs"]}>
-          <Search type="news" />
-          {/* <Type useChecklist={false} title="Kategori" dataDropdown={category} /> */}
-          <PopularNews />
-          {/* <Tags /> */}
-          <NewsLetter />
-          <FollowUs />
-        </div>
-        <div className={styles["side-content-mobile-bbs"]}>
-          <PopularNews />
-          {/* <Tags /> */}
-          <NewsLetter />
-          <FollowUs />
-        </div>
-      </div>
+      {children}
     </section>
   );
 }

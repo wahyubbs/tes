@@ -1,3 +1,5 @@
+"use server";
+
 import { ethosPostApi } from "./ethosAPI";
 
 async function joinPartnership(dataEmail: string) {

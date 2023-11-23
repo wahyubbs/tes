@@ -66,6 +66,7 @@ function SliderProducts({ dataProduct }: { dataProduct: any[] }) {
       <Slider ref={slider} {...settings}>
         {validDataProduct?.map((data, index) => (
           <CardProduct
+            priority={false}
             isResponsive={false}
             category={data.kategori}
             isActive={false}

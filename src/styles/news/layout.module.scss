@@ -7,69 +7,14 @@
   gap: 0.833rem;
   align-items: center;
 }
-.content-bbs {
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  gap: 1.66rem;
-  width: 90%;
-  padding: 1.66rem 0;
-}
 
-.side-content-mobile-bbs {
-  flex-direction: column;
-  align-items: center;
-  gap: 1.66rem;
-  display: none;
-}
-
-.side-content-bbs {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.66rem;
-}
 @include respond(extraSmall) {
-  .content-bbs {
-    flex-direction: column;
-  }
-
-  .side-content-bbs {
-    display: none;
-  }
-
-  .side-content-mobile-bbs {
-    display: flex;
-  }
 }
 
 @include respond(small) {
-  .content-bbs {
-    flex-direction: column;
-  }
-
-  .side-content-bbs {
-    display: none;
-  }
-
-  .side-content-mobile-bbs {
-    display: flex;
-  }
 }
 
 @include respond(medium) {
-  .content-bbs {
-    flex-direction: column;
-  }
-
-  .side-content-bbs {
-    display: none;
-  }
-
-  .side-content-mobile-bbs {
-    display: flex;
-  }
 }
 
 @include respond(large) {

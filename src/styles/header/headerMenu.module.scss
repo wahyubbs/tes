@@ -11,7 +11,7 @@
   background-image: url("/img/picturePlaceholder.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: auto;
+  background-size: contain;
   height: 9.58rem;
   position: relative;
   img {
@@ -31,6 +31,25 @@
   gap: 0.316rem;
   font-size: 16px;
   line-height: 20px;
+  .root-menu-bbs {
+    display: flex;
+    justify-content: center;
+    gap: 0.316rem;
+    color: white;
+    align-items: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1em;
+    line-height: 1.2em;
+    text-align: right;
+    .subroot-menu-bbs {
+      color: #87bd3d !important;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
   h1 {
     font-style: normal;
     font-weight: 700;
@@ -39,17 +58,6 @@
     text-align: center;
     letter-spacing: 0.03em;
     color: #ffffff;
-  }
-  p {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1em;
-    line-height: 1.2em;
-    text-align: right;
-    color: #ffffff;
-  }
-  span {
-    color: #87bd3d;
   }
 }
 

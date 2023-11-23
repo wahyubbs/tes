@@ -1,3 +1,5 @@
+"use server";
+
 import { ethosViewApi } from "./ethosAPI";
 
 async function getProductsByCat(cat: string) {

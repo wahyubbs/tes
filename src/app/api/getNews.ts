@@ -1,5 +1,7 @@
+"use server";
+
 import { ethosViewApi } from "./ethosAPI";
-export const revalidate = 5;
+
 async function getNews() {
   try {
     const response = await ethosViewApi.get("/news");

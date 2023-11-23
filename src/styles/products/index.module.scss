@@ -1,5 +1,36 @@
 @use "@/styles/mixins" as *;
 
+.content-container-bbs {
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.66rem 0;
+}
+
+.content-bbs {
+  width: 70%;
+  gap: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.side-content-bbs {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.mobile-bbs {
+  display: none;
+}
+
+.destop-bbs {
+  display: block;
+}
+
 .products-container-bbs {
   display: flex;
   flex-direction: column;
@@ -16,6 +47,24 @@
 }
 
 @include respond(extraSmall) {
+  .mobile-bbs {
+    display: block;
+  }
+
+  .destop-bbs {
+    display: none;
+  }
+  .content-container-bbs {
+    flex-direction: column;
+  }
+
+  .content-bbs {
+    width: 100%;
+  }
+  .side-content-bbs {
+    width: 100%;
+  }
+
   .products-bbs {
     width: 100%;
     grid-template-columns: repeat(2, minmax(0, 45%));
@@ -23,6 +72,22 @@
 }
 
 @include respond(small) {
+  .mobile-bbs {
+    display: block;
+  }
+
+  .destop-bbs {
+    display: none;
+  }
+  .content-container-bbs {
+    flex-direction: column;
+  }
+  .content-bbs {
+    width: 100%;
+  }
+  .side-content-bbs {
+    width: 100%;
+  }
   .products-bbs {
     width: 100%;
     grid-template-columns: repeat(2, minmax(0, 45%));
@@ -30,6 +95,16 @@
 }
 
 @include respond(medium) {
+  .content-container-bbs {
+    flex-direction: column;
+  }
+  .content-bbs {
+    width: 100%;
+  }
+  .side-content-bbs {
+    width: 100%;
+  }
+
   .products-bbs {
     width: 100%;
     grid-template-columns: repeat(2, minmax(0, 45%));

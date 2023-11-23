@@ -1,5 +1,29 @@
 @use "@/styles/mixins" as *;
 
+.content-bbs {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 1.66rem;
+  width: 90%;
+  padding: 1.66rem 0;
+}
+
+.side-content-mobile-bbs {
+  flex-direction: column;
+  align-items: center;
+  gap: 1.66rem;
+  display: none;
+}
+
+.side-content-bbs {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.66rem;
+}
+
 .news-container-bbs {
   display: flex;
   width: 70%;
@@ -11,18 +35,54 @@
 }
 
 @include respond(extraSmall) {
+  .content-bbs {
+    flex-direction: column;
+  }
+
+  .side-content-bbs {
+    display: none;
+  }
+
+  .side-content-mobile-bbs {
+    display: flex;
+  }
+
   .news-container-bbs {
     width: 100%;
   }
 }
 
 @include respond(small) {
+  .content-bbs {
+    flex-direction: column;
+  }
+
+  .side-content-bbs {
+    display: none;
+  }
+
+  .side-content-mobile-bbs {
+    display: flex;
+  }
+
   .news-container-bbs {
     width: 100%;
   }
 }
 
 @include respond(medium) {
+  .content-bbs {
+    flex-direction: column;
+  }
+
+  .side-content-bbs {
+    display: none;
+  }
+
+  .side-content-mobile-bbs {
+    display: flex;
+  }
+
   .news-container-bbs {
     width: 100%;
   }

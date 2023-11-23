@@ -1,3 +1,5 @@
+"use server";
+
 import { ethosViewApi } from "./ethosAPI";
 
 async function getHeaderMenu(name: string) {

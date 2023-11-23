@@ -1,8 +1,20 @@
 import Image from "next/image";
+import { IoIosArrowForward } from "react-icons/io";
 
 import styles from "@/styles/header/headerMenu.module.scss";
 import getHeaderMenu from "@/app/api/getHeaderMenu";
+import Link from "next/link";
 
+const rootMenu = [
+  { value: "ethosdaily", label: "ETHOS DAILY" },
+  { value: "tentangkami", label: "ABOUT US" },
+  { value: "produk", label: "PRODUCTS" },
+  {
+    value: "karir",
+    label: "CAREER",
+  },
+  { value: "partnership", label: "PARTNERSHIP" },
+];
 async function HeaderMenu({
   imageURL,
   title,
@@ -13,6 +25,7 @@ async function HeaderMenu({
   path: string;
 }) {
   const bgImage = await getHeaderMenu(imageURL);
+  const paths = path.split("/");
   return (
     <>
       <div className={styles["container-bbs"]}>
@@ -34,7 +47,36 @@ async function HeaderMenu({
       </div>
       <div className={styles["title-bbs"]}>
         <h1>{title}</h1>
-        <p>{/* Beranda<span>{` > ${path}`}</span> */}</p>
+        <div className={styles["root-menu-bbs"]}>
+          <Link href="/">HOME</Link>
+
+          {paths.map((item, index) => (
+            <div className={styles["root-menu-bbs"]} key={index}>
+              <IoIosArrowForward />
+              <Link
+                className={styles["subroot-menu-bbs"]}
+                href={` ${
+                  index === 0
+                    ? paths.length > 1
+                      ? `/${item.replaceAll(" ", "").toLocaleLowerCase()}`
+                      : item.replaceAll(" ", "").toLocaleLowerCase()
+                    : btoa(item.replaceAll(" ", "").toLocaleLowerCase())
+                }`}
+              >
+                {rootMenu.find(
+                  (el) =>
+                    el.value === item.replaceAll(" ", "").toLocaleLowerCase()
+                )?.label !== undefined
+                  ? rootMenu.find(
+                      (el) =>
+                        el.value ===
+                        item.replaceAll(" ", "").toLocaleLowerCase()
+                    )?.label
+                  : item.replaceAll("-", " ").toLocaleLowerCase()}
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );

@@ -14,6 +14,7 @@ function CardNews({
   description,
   category,
   slug,
+  priority,
 }: {
   slug: string;
   category: string;
@@ -22,6 +23,7 @@ function CardNews({
   date: string;
   title: string;
   description: string;
+  priority: boolean;
 }) {
   const route = useRouter();
 
@@ -39,7 +41,7 @@ function CardNews({
           onError={handleOnError}
           alt="news"
           fill={true}
-          priority={true}
+          priority={priority}
           sizes="100vw"
           src={`${
             process.env.NEXT_PUBLIC_DEVELOPMENT_URL_IMG

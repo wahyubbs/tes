@@ -24,6 +24,7 @@ function NewsSection({ dataNews }: { dataNews: any }) {
         <div className={styles["cards-container-bbs"]}>
           {dataNews.map((data: any, index: number) => (
             <CardNews
+              priority={false}
               key={index}
               slug={data.slugnya}
               category={data.kategorinya}

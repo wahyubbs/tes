@@ -1,7 +1,11 @@
 import getAllProducts from "@/app/api/getAllProducts";
 import getProductById from "@/app/api/getProductById";
 import getProductsByCat from "@/app/api/getProductsByCat";
+import HeaderMenu from "@/components/header/HeaderMenu";
 import ProductContent from "@/components/products/productDetail/ProductContent";
+import Search from "@/components/sideContent/Search";
+import PopularProducts from "@/components/sideContent/popularProducts/PopularProducts";
+import styles from "@/styles/products/index.module.scss";
 
 interface queryParams {
   params: { slug: string };
@@ -37,10 +41,36 @@ async function ProductDetail({ params }: queryParams) {
   const productById = await getProductById(decodeSlug);
   const productsByTag = await getProductsByCat(productById[0].kategori);
   return (
-    <ProductContent
-      product={productById ? productById[0] : null}
-      otherProduct={productsByTag ? productsByTag : null}
-    />
+    <>
+      <HeaderMenu
+        title="PRODUCTS"
+        imageURL={"produk"}
+        path={`Produk / ${decodeSlug}`}
+      />
+      <div className={styles["content-container-bbs"]}>
+        <div className={`${styles["side-content-bbs"]} `}>
+          {/* <Type useChecklist={true} title="Kategori" dataDropdown={category} /> */}
+          <Search type="product" />
+          <div className={`${styles["destop-bbs"]}`}>
+            <PopularProducts />
+          </div>
+        </div>
+        <div className={styles["content-bbs"]}>
+          <div className={styles["products-container-bbs"]}>
+            <ProductContent
+              product={productById ? productById[0] : null}
+              otherProduct={productsByTag ? productsByTag : null}
+            />
+          </div>
+        </div>
+        <div
+          className={`${styles["side-content-bbs"]} ${styles["mobile-bbs"]}`}
+        >
+          {/* <Type useChecklist={true} title="Kategori" dataDropdown={category} /> */}
+          <PopularProducts />
+        </div>
+      </div>
+    </>
   );
 }
 

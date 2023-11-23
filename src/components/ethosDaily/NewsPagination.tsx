@@ -49,6 +49,7 @@ function NewsPagination({ limit }: { limit: number }) {
         <div className={styles["news-bbs"]}>
           {dataNews.data.map((data: any, index: number) => (
             <CardNews
+              priority={true}
               key={index}
               slug={data.slugnya}
               status=""

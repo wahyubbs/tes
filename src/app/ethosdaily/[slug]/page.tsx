@@ -2,6 +2,12 @@ import getAllNews from "@/app/api/getAllNews";
 import getNewsByCat from "@/app/api/getNewsByCat";
 import getNewsById from "@/app/api/getNewsById";
 import NewsContent from "@/components/ethosDaily/newsDetail/NewsContent";
+import HeaderMenu from "@/components/header/HeaderMenu";
+import FollowUs from "@/components/sideContent/FollowUs";
+import NewsLetter from "@/components/sideContent/NewsLetter";
+import Search from "@/components/sideContent/Search";
+import PopularNews from "@/components/sideContent/popularNews/PopularNews";
+import styles from "@/styles/news/index.module.scss";
 
 interface queryParams {
   params: { slug: string };
@@ -42,11 +48,40 @@ async function Page({ params }: queryParams) {
   tags = dataNewsById[0]?.tagsnya.split(",");
 
   return (
-    <NewsContent
-      dataNewsById={dataNewsById ? dataNewsById : null}
-      dataNewsByCat={dataNewsByTags ? dataNewsByTags : null}
-      tags={tags}
-    />
+    <>
+      <HeaderMenu
+        title="ETHOS DAILY"
+        imageURL={"Daily"}
+        path={`Ethos Daily / ${decodeSlug}`}
+      />
+      <div className={styles["content-bbs"]}>
+        <NewsContent
+          dataNewsById={dataNewsById ? dataNewsById : null}
+          dataNewsByCat={dataNewsByTags ? dataNewsByTags : null}
+          tags={tags}
+        />
+        <div className={styles["side-content-mobile-bbs"]}>
+          <Search type="news" />
+
+          {/* <Type useChecklist={false} title="Kategori" dataDropdown={category} /> */}
+        </div>
+
+        <div className={styles["side-content-bbs"]}>
+          <Search type="news" />
+          {/* <Type useChecklist={false} title="Kategori" dataDropdown={category} /> */}
+          <PopularNews />
+          {/* <Tags /> */}
+          <NewsLetter />
+          <FollowUs />
+        </div>
+        <div className={styles["side-content-mobile-bbs"]}>
+          <PopularNews />
+          {/* <Tags /> */}
+          <NewsLetter />
+          <FollowUs />
+        </div>
+      </div>
+    </>
   );
 }
 

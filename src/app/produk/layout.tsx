@@ -23,23 +23,7 @@ export default function ProductLayout({
 }) {
   return (
     <section id="news" className={styles["container-bbs"]}>
-      <HeaderMenu title="PRODUCTS" imageURL={"produk"} path="Produk" />
-      <div className={styles["content-container-bbs"]}>
-        <div className={`${styles["side-content-bbs"]} `}>
-          {/* <Type useChecklist={true} title="Kategori" dataDropdown={category} /> */}
-          <Search type="product" />
-          <div className={`${styles["destop-bbs"]}`}>
-            <PopularProducts />
-          </div>
-        </div>
-        <div className={styles["content-bbs"]}>{children}</div>
-        <div
-          className={`${styles["side-content-bbs"]} ${styles["mobile-bbs"]}`}
-        >
-          {/* <Type useChecklist={true} title="Kategori" dataDropdown={category} /> */}
-          <PopularProducts />
-        </div>
-      </div>
+      {children}
     </section>
   );
 }

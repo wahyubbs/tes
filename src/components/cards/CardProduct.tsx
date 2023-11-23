@@ -15,6 +15,7 @@ function CardProduct({
   isResponsive,
   category,
   slug,
+  priority,
 }: {
   slug: string;
   isActive: boolean;
@@ -23,6 +24,7 @@ function CardProduct({
   title: string;
   description: string;
   category: string;
+  priority: boolean;
 }) {
   const route = useRouter();
   return (
@@ -40,7 +42,7 @@ function CardProduct({
           onError={handleOnError}
           alt="produk"
           fill={true}
-          priority={true}
+          priority={priority}
           sizes="100vw"
           src={`${
             process.env.NEXT_PUBLIC_DEVELOPMENT_URL_IMG

@@ -52,6 +52,7 @@ function ProductContent({
               {otherProduct &&
                 otherProduct.map((data: any, index: number) => (
                   <CardProduct
+                    priority={true}
                     key={index}
                     slug={data.slugnya}
                     isResponsive={true}

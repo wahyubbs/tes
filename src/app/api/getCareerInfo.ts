@@ -1,3 +1,5 @@
+"use server";
+
 import { ethosViewApi } from "./ethosAPI";
 
 async function getCareerInfo(page: string, limit: string, search: string) {
