@@ -5,6 +5,9 @@ import { useRouter } from "next/navigation";
 import styles from "@/styles/cards/cardNews.module.scss";
 import MoreButton from "../buttons/MoreButton";
 import { handleOnError } from "../utils/handleImageError";
+import Button from "../buttons/Button";
+import { ButtonType } from "../../models/ButtonType";
+import { HeaderMenuType } from "@/models/HeaderMenuType";
 
 function CardNews({
   imgUrl,
@@ -65,7 +68,21 @@ function CardNews({
         </div>
 
         <div className={styles["more-btn-bbs"]}>
-          <MoreButton url={`/ethosdaily/${btoa(slug)}`} />
+          <Button
+            style={{
+              width: "100%",
+              marginTop: "auto",
+              fontStyle: "normal",
+              fontWeight: "500",
+              fontSize: "12px",
+              lineHeight: "16px",
+              letterSpacing: "0.003em",
+            }}
+            variant={ButtonType.WHITEHOVERED}
+            url={`/ethosdaily/${btoa(slug)}`}
+            title="Selengkapnya"
+            menuName={HeaderMenuType.ETHOS_DAILY}
+          />
         </div>
       </div>
     </div>

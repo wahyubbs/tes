@@ -2,9 +2,11 @@ import Dynamic from "next/dynamic";
 
 import styles from "@/styles/home/newsSection/newsSection.module.scss";
 const CardNews = Dynamic(() => import("../../cards/CardNews"));
-const SeeOtherButton = Dynamic(() => import("../../buttons/SeeAllButton"));
+const SeeOtherButton = Dynamic(() => import("../../buttons/Button"));
 import { HeaderMenuType } from "@/models/HeaderMenuType";
 import Loading from "@/components/utils/Loading";
+import Button from "../../buttons/Button";
+import { ButtonType } from "@/models/ButtonType";
 
 function NewsSection({ dataNews }: { dataNews: any }) {
   return (
@@ -13,7 +15,16 @@ function NewsSection({ dataNews }: { dataNews: any }) {
         <div></div>
         <h1 className={styles["title-bbs"]}>ETHOS DAILY</h1>
         <div className={styles["web-btn-bbs"]}>
-          <SeeOtherButton
+          <Button
+            style={{
+              width: "fit-content",
+              fontStyle: "normal",
+              fontWeight: "500",
+              fontSize: "1em",
+              lineHeight: "1em",
+              letterSpacing: "0.003em",
+            }}
+            variant={ButtonType.WHITE}
             menuName={HeaderMenuType.ETHOS_DAILY}
             url={"/ethosdaily"}
             title="Lihat Semua Berita"
@@ -41,7 +52,9 @@ function NewsSection({ dataNews }: { dataNews: any }) {
       )}
 
       <div className={styles["mobile-btn-bbs"]}>
-        <SeeOtherButton
+        <Button
+          style={{}}
+          variant={ButtonType.WHITE}
           menuName={HeaderMenuType.ETHOS_DAILY}
           url={"/ethosdaily"}
           title="Lihat Semua Berita"

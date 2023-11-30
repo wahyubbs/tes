@@ -1,7 +1,15 @@
 import styles from "@/styles/home/productSection/productSection.module.scss";
 import { HeaderMenuType } from "@/models/HeaderMenuType";
-import SliderProducts from "@/components/sliders/SliderProducts";
-import SeeAllButton from "@/components/buttons/SeeAllButton";
+import dynamic from "next/dynamic";
+
+const SliderProducts = dynamic(
+  () => import("@/components/sliders/SliderProducts"),
+  {
+    ssr: false,
+  }
+);
+import Button from "@/components/buttons/Button";
+import { ButtonType } from "@/models/ButtonType";
 import Loading from "@/components/utils/Loading";
 
 function ProductSection({ dataProducts }: { dataProducts: any[] }) {
@@ -19,7 +27,16 @@ function ProductSection({ dataProducts }: { dataProducts: any[] }) {
 
         {dataProducts && (
           <div className={styles["seeall-btn-bbs"]}>
-            <SeeAllButton
+            <Button
+              style={{
+                width: "fit-content",
+                fontStyle: "normal",
+                fontWeight: "500",
+                fontSize: "1em",
+                lineHeight: "1em",
+                letterSpacing: "0.003em",
+              }}
+              variant={ButtonType.WHITEHOVERED}
               url="/produk"
               title="Lihat Semua Produk"
               menuName={HeaderMenuType.PRODUK}

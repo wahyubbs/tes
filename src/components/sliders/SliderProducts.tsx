@@ -12,7 +12,8 @@ function SliderProducts({ dataProduct }: { dataProduct: any[] }) {
     dataProduct.length === 3 ? dataProduct.concat(dataProduct) : dataProduct;
   const slider = useRef<any>();
   const settings = {
-    className: styles["slider-bbs"],
+    className: styles["sliders-bbs"],
+
     centerMode: true,
     infinite: dataProduct.length >= 3 ? true : false,
     centerPadding: "0px",

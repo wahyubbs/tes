@@ -6,6 +6,9 @@ import styles from "@/styles/cards/cardProduct.module.scss";
 import MoreButton from "../buttons/MoreButton";
 import { useRouter } from "next/navigation";
 import { handleOnError } from "../utils/handleImageError";
+import Button from "../buttons/Button";
+import { ButtonType } from "../../models/ButtonType";
+import { HeaderMenuType } from "@/models/HeaderMenuType";
 
 function CardProduct({
   imgUrl,
@@ -33,9 +36,9 @@ function CardProduct({
         e.preventDefault();
         route.push(`/produk/${btoa(slug)}`);
       }}
-      className={` ${
-        isActive ? styles["container-active-bbs"] : styles["container-bbs"]
-      } ${isResponsive ? styles["card-responsive-bbs"] : null}`}
+      className={` ${styles["container-bbs"]} ${
+        isResponsive ? styles["card-responsive-bbs"] : null
+      }`}
     >
       <div className={styles["image-container-bbs"]}>
         <Image
@@ -59,7 +62,21 @@ function CardProduct({
           <p>{description} </p>
         </div>
         <div className={styles["more-btn-bbs"]}>
-          <MoreButton url={`/produk/${btoa(slug)}`} />
+          <Button
+            style={{
+              width: "100%",
+              marginTop: "auto",
+              fontStyle: "normal",
+              fontWeight: "500",
+              fontSize: "12px",
+              lineHeight: "16px",
+              letterSpacing: "0.003em",
+            }}
+            variant={ButtonType.WHITEHOVERED}
+            title="Selengkapnya"
+            url={`/produk/${btoa(slug)}`}
+            menuName={HeaderMenuType.PRODUK}
+          />
         </div>
       </div>
     </div>

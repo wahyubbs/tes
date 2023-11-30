@@ -1,0 +1,37 @@
+.container-bbs {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  line-height: 22px;
+
+  .content-bbs {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: flex-start;
+    color: #619a3f;
+    text-align: center;
+    h1 {
+      font-size: 1.33em;
+      line-height: 1.5em;
+    }
+    p {
+      font-size: 1em;
+      line-height: 1.4em;
+    }
+  }
+}
+
+.btn-bbs {
+  cursor: pointer;
+
+  padding: 0.3125rem 0.9375rem;
+  font-size: 18px;
+  line-height: 22px;
+}

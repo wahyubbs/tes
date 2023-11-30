@@ -5,7 +5,8 @@ import { useRouter } from "next/navigation";
 
 import { HeaderMenuType } from "@/models/HeaderMenuType";
 import CardProduct from "@/components/cards/CardProduct";
-import SeeAllButton from "@/components/buttons/SeeAllButton";
+import Button from "@/components/buttons/Button";
+import { ButtonType } from "@/models/ButtonType";
 import styles from "@/styles/products/content.module.scss";
 import { handleOnError } from "@/components/utils/handleImageError";
 import { useContextProvider } from "@/context/ContextProvider";
@@ -65,7 +66,9 @@ function ProductContent({
                 ))}
             </div>
             <div className={styles["seeAll-btn-container"]}>
-              <SeeAllButton
+              <Button
+                style={{}}
+                variant={ButtonType.WHITEHOVERED}
                 url="/produk"
                 title="Lihat Semua Produk"
                 menuName={HeaderMenuType.PRODUK}

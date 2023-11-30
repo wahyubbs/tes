@@ -33,9 +33,8 @@ export async function generateMetadata({ params }: queryParams) {
 
 export async function generateStaticParams() {
   const resp = await getAllNews("0", "100000000000", "");
-
   return resp?.data?.map((item: any) => ({
-    slug: btoa(item.slugnya),
+    slug: item.slugnya ? btoa(item.slugnya) : btoa("404"),
   }));
 }
 

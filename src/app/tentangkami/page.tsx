@@ -13,6 +13,8 @@ export async function generateMetadata() {
   };
 }
 
+export const revalidate = 5;
+
 export default async function AboutUs() {
   const dataHistory = await getHistory();
 

@@ -1,50 +1,47 @@
 @use "@/styles/mixins" as *;
 
-.slider-bbs {
-  width: 96%;
-  margin: 0 auto;
-
-  & > :first-child {
-    padding: 1.2rem 0 1.2rem 0 !important;
+.sliders-bbs {
+  width: 95%;
+  margin: 0 auto ;
+  
+  & :global(.slick-slide) > div {
+    width: 80%;
+    display: flex;
+    margin: 3rem auto 3rem auto ;
+    justify-content: center;
   }
 
-  & :global(.slick-current) {
-    & > :first-child {
-      & > :first-child {
-        transform: scale(1);
-      }
-    }
-  }
+  & :global(.slick-center) > div {
+    transition-duration: 500ms;
+    transition-property: scale;
+    transform: scale(1.2);  }
 }
 
 @include respond(extraSmall) {
-  .slider-bbs {
-    & > div:first-child {
-      div:first-child {
-        margin: 0 auto;
-      }
-    }
+  .sliders-bbs {
+      & :global(.slick-center) > div {
+        transform: none 
+       }
   }
+ 
 }
 
 @include respond(small) {
-  .slider-bbs {
-    & > div:first-child {
-      div:first-child {
-        margin: 0 auto;
-      }
+  .sliders-bbs {
+    & :global(.slick-center) > div {
+      transform: none  
     }
-  }
+}
+  
 }
 
 @include respond(medium) {
-  .slider-bbs {
-    & > div:first-child {
-      div:first-child {
-        margin: 0 auto;
-      }
-    }
-  }
+  .sliders-bbs {
+    & :global(.slick-center) > div {
+      transform: none 
+     }
+}
+ 
 }
 
 @include respond(large) {

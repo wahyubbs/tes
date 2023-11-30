@@ -1,4 +1,5 @@
-import SeeAllButton from "@/components/buttons/SeeAllButton";
+import Button from "@/components/buttons/Button";
+import { ButtonType } from "@/models/ButtonType";
 import CardNews from "@/components/cards/CardNews";
 import { HeaderMenuType } from "@/models/HeaderMenuType";
 import styles from "@/styles/news/otherNews.module.scss";
@@ -22,7 +23,9 @@ function OtherNews({ dataNewsByCat }: { dataNewsByCat: any[] }) {
           />
         ))}
       </div>
-      <SeeAllButton
+      <Button
+        style={{}}
+        variant={ButtonType.WHITEHOVERED}
         url="/ethosdaily"
         title="Lihat Semua Berita"
         menuName={HeaderMenuType.ETHOS_DAILY}
