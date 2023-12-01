@@ -1,9 +1,26 @@
+import dynamic from "next/dynamic";
+
 import styles from "@/styles/home/homePage.module.scss";
-import AboutSection from "@/components/home/aboutSection/AboutSection";
 import HomeSection from "@/components/home/homeSection/HomeSection";
 import NewsSection from "@/components/home/newsSection/NewsSection";
-import ProductSection from "@/components/home/productSection/ProductSection";
-import MitraSection from "@/components/home/mitraSection/MitraSection";
+const AboutSection = dynamic(
+  () => import("@/components/home/aboutSection/AboutSection"),
+  {
+    ssr: true,
+  }
+);
+const ProductSection = dynamic(
+  () => import("@/components/home/productSection/ProductSection"),
+  {
+    ssr: true,
+  }
+);
+const MitraSection = dynamic(
+  () => import("@/components/home/mitraSection/MitraSection"),
+  {
+    ssr: true,
+  }
+);
 import { getSlider } from "./api/getSlider";
 import { getAboutUs } from "./api/getAboutUs";
 import getNews from "./api/getNews";
