@@ -8,48 +8,62 @@ import NewsLetter from "@/components/sideContent/NewsLetter";
 import Search from "@/components/sideContent/Search";
 import PopularNews from "@/components/sideContent/popularNews/PopularNews";
 import styles from "@/styles/news/index.module.scss";
+import { notFound } from "next/navigation";
 
 interface queryParams {
   params: { slug: string };
 }
 
 export async function generateMetadata({ params }: queryParams) {
-  const decodeSlug = atob(params.slug.replaceAll("%3D", "="));
-  const dataNews = await getNewsById(decodeSlug);
-  if (dataNews)
-    return {
-      language: "indonesia",
-      title: `${dataNews[0]?.judulnya}`,
-      keywords: [
-        dataNews[0]?.keyword,
-        dataNews[0]?.judulnya,
-        dataNews[0]?.tagsnya,
-      ],
-      description: dataNews[0]?.isicard,
-      alternates: {
-        canonical: `/ethosdaily/${params.slug}`,
-      },
-    };
-  else return null;
+  let decodeSlug;
+  let dataNews;
+
+  try {
+    decodeSlug = atob(params.slug.replaceAll("%3D", "="));
+    dataNews = await getNewsById(decodeSlug!);
+  } catch (error) {
+    return notFound();
+  }
+  if (!dataNews) return notFound();
+  return {
+    language: "indonesia",
+    title: `${dataNews[0]?.judulnya}`,
+    keywords: [
+      dataNews[0]?.keyword,
+      dataNews[0]?.judulnya,
+      dataNews[0]?.tagsnya,
+    ],
+    description: dataNews[0]?.isicard,
+    alternates: {
+      canonical: `/ethosdaily/${params.slug}`,
+    },
+  };
 }
 
-export const dynamicParams = false;
+export const dynamic = "force-static";
 
 export async function generateStaticParams() {
   const resp = await getAllNews("0", "100000000000", "");
   return resp?.data?.map((item: any) => ({
-    slug: item.slugnya ? btoa(item.slugnya) : btoa("404"),
+    slug: item.slugnya ? btoa(item.slugnya) : "404",
   }));
 }
 
 async function Page({ params }: queryParams) {
   const { slug } = params;
-  const decodeSlug = atob(slug.replaceAll("%3D", "="));
+  let decodeSlug;
   let tags;
-  const dataNewsById = await getNewsById(decodeSlug);
-  const dataNewsByTags = await getNewsByCat(dataNewsById[0]?.kategori);
-  tags = dataNewsById[0]?.tagsnya.split(",");
+  let dataNewsById;
+  let dataNewsByTags;
 
+  try {
+    decodeSlug = atob(slug.replaceAll("%3D", "="));
+    dataNewsById = await getNewsById(decodeSlug!);
+    dataNewsByTags = await getNewsByCat(dataNewsById[0]?.kategori);
+    tags = dataNewsById[0]?.tagsnya.split(",");
+  } catch (error) {
+    return notFound();
+  }
   return (
     <>
       <HeaderMenu

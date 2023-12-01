@@ -6,14 +6,23 @@ import ProductContent from "@/components/products/productDetail/ProductContent";
 import Search from "@/components/sideContent/Search";
 import PopularProducts from "@/components/sideContent/popularProducts/PopularProducts";
 import styles from "@/styles/products/index.module.scss";
+import { notFound } from "next/navigation";
 
 interface queryParams {
   params: { slug: string };
 }
 
 export async function generateMetadata({ params }: queryParams) {
-  const decodeSlug = atob(params.slug.replaceAll("%3D", "="));
-  const dataProduct = await getProductById(decodeSlug);
+  let decodeSlug;
+  let dataProduct;
+  try {
+    decodeSlug = atob(params.slug.replaceAll("%3D", "="));
+    dataProduct = await getProductById(decodeSlug!);
+  } catch (error) {
+    return notFound();
+  }
+  if (!dataProduct) return notFound();
+
   return {
     title: `${dataProduct[0].judulnya}`,
     keywords: [
@@ -28,20 +37,27 @@ export async function generateMetadata({ params }: queryParams) {
   };
 }
 
-export const dynamicParams = false;
+export const dynamic = "force-static";
 
 export async function generateStaticParams() {
   const resp = await getAllProducts("0", "100000000000", "");
   return resp.data?.map((item: any) => ({
-    slug: btoa(item.slugnya),
+    slug: item.slugnya ? btoa(item.slugnya) : "404",
   }));
 }
 
 async function ProductDetail({ params }: queryParams) {
   const { slug } = params;
-  const decodeSlug = atob(slug.replaceAll("%3D", "="));
-  const productById = await getProductById(decodeSlug);
-  const productsByTag = await getProductsByCat(productById[0].kategori);
+  let decodeSlug;
+  let productById;
+  let productsByTag;
+  try {
+    decodeSlug = atob(slug.replaceAll("%3D", "="));
+    productById = await getProductById(decodeSlug!);
+    productsByTag = await getProductsByCat(productById[0].kategori);
+  } catch (error) {
+    return notFound();
+  }
   return (
     <>
       <HeaderMenu

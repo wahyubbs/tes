@@ -1,7 +1,5 @@
 @use "@/styles/mixins" as *;
 
-
-
 .container-bbs {
   pointer-events: none;
   display: flex;
@@ -74,13 +72,13 @@
   .title-bbs {
     font-weight: 700;
     font-size: 1.33em;
-    white-space:inherit ;
-    overflow-wrap: break-word ; 
+    white-space: inherit;
+    overflow-wrap: break-word;
     line-height: 1.4em;
     min-height: 4ch;
     display: flex;
     align-items: center;
-   
+
     font-family: var(--font-roboto) !important;
     color: #2f2f2f;
   }
@@ -156,7 +154,7 @@
 }
 
 @include respond(large) {
-  .container-active-bbs {
+  .container-bbs {
     pointer-events: all;
   }
 
