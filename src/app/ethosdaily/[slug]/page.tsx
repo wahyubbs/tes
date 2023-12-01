@@ -72,6 +72,11 @@ async function Page({ params }: queryParams) {
         path={`Ethos Daily / ${decodeSlug}`}
       />
       <div className={styles["content-bbs"]}>
+        <div className={styles["side-content-mobile-bbs"]}>
+          <Search type="news" />
+
+          {/* <Type useChecklist={false} title="Kategori" dataDropdown={category} /> */}
+        </div>
         <NewsContent
           dataNewsById={dataNewsById ? dataNewsById : null}
           dataNewsByCat={dataNewsByTags ? dataNewsByTags : null}
