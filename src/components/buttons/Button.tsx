@@ -20,7 +20,6 @@ function Button({
   variant: ButtonType;
 }) {
   const { menuActive, setMenuActive } = useContextProvider();
-
   const route = useRouter();
   return (
     <button
@@ -28,7 +27,8 @@ function Button({
       onClick={(e) => {
         e.preventDefault();
         setMenuActive(menuName);
-        route.push(url);
+        if (url !== "") route.push(url);
+        else route.back();
       }}
       className={`${styles["btn-bbs"]} ${
         styles[

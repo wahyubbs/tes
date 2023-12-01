@@ -16,20 +16,24 @@ interface queryParams {
 export async function generateMetadata({ params }: queryParams) {
   const decodeSlug = atob(params.slug.replaceAll("%3D", "="));
   const dataNews = await getNewsById(decodeSlug);
-  return {
-    language: "indonesia",
-    title: `${dataNews[0]?.judulnya}`,
-    keywords: [
-      dataNews[0]?.keyword,
-      dataNews[0]?.judulnya,
-      dataNews[0]?.tagsnya,
-    ],
-    description: dataNews[0]?.isicard,
-    alternates: {
-      canonical: `/ethosdaily/${params.slug}`,
-    },
-  };
+  if (dataNews)
+    return {
+      language: "indonesia",
+      title: `${dataNews[0]?.judulnya}`,
+      keywords: [
+        dataNews[0]?.keyword,
+        dataNews[0]?.judulnya,
+        dataNews[0]?.tagsnya,
+      ],
+      description: dataNews[0]?.isicard,
+      alternates: {
+        canonical: `/ethosdaily/${params.slug}`,
+      },
+    };
+  else return null;
 }
+
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   const resp = await getAllNews("0", "100000000000", "");

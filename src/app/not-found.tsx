@@ -18,7 +18,7 @@ async function Index() {
         <h1>Page not found!</h1>
         <p>
           {`We're sorry, the page you requested could no be found.`}
-          <br /> Please go back to the home page.
+          <br /> Please go back to the previous page.
         </p>
         <Button
           style={{
@@ -31,8 +31,8 @@ async function Index() {
             letterSpacing: "0.003em",
           }}
           variant={ButtonType.GREEN}
-          url={`/`}
-          title="Go Home"
+          url={``}
+          title="Go Back"
           menuName={HeaderMenuType.BERANDA}
         />
       </div>

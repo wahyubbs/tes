@@ -28,6 +28,8 @@ export async function generateMetadata({ params }: queryParams) {
   };
 }
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const resp = await getAllProducts("0", "100000000000", "");
   return resp.data?.map((item: any) => ({

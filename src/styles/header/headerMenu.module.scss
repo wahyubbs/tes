@@ -31,9 +31,22 @@
   gap: 0.316rem;
   font-size: 16px;
   line-height: 20px;
+  .root-menu-container-bbs {
+    padding: 0 1.8rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.316rem;
+    align-items: center;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
   .root-menu-bbs {
     display: flex;
     justify-content: center;
+
     gap: 0.316rem;
     color: white;
     align-items: center;
@@ -44,10 +57,6 @@
     text-align: right;
     .subroot-menu-bbs {
       color: #87bd3d !important;
-    }
-    a {
-      color: white;
-      text-decoration: none;
     }
   }
   h1 {

@@ -47,7 +47,7 @@ async function HeaderMenu({
       </div>
       <div className={styles["title-bbs"]}>
         <h1>{title}</h1>
-        <div className={styles["root-menu-bbs"]}>
+        <div className={styles["root-menu-container-bbs"]}>
           <Link href="/">HOME</Link>
 
           {paths.map((item, index) => (
