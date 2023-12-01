@@ -18,10 +18,11 @@ async function Index() {
         <h1>Page not found!</h1>
         <p>
           {`We're sorry, the page you requested could no be found.`}
-          <br /> Please go back to the home age.
+          <br /> Please go back to the home page.
         </p>
         <Button
           style={{
+            marginTop: "0.5rem",
             width: "fit-content",
             fontStyle: "normal",
             fontWeight: "500",
