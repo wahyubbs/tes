@@ -101,9 +101,6 @@
 }
 
 @include respond(extraSmall) {
-  .container-bbs {
-    width: 80%;
-  }
   .container-bbs,
   .container-active-bbs {
     pointer-events: all;
@@ -118,10 +115,6 @@
 }
 
 @include respond(small) {
-  .container-bbs {
-    width: 80%;
-  }
-
   .container-bbs,
   .container-active-bbs {
     pointer-events: all;
@@ -136,10 +129,6 @@
 }
 
 @include respond(medium) {
-  .container-bbs {
-    width: 80%;
-  }
-
   .container-bbs,
   .container-active-bbs {
     pointer-events: all;
