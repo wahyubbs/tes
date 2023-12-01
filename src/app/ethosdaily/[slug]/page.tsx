@@ -77,11 +77,6 @@ async function Page({ params }: queryParams) {
           dataNewsByCat={dataNewsByTags ? dataNewsByTags : null}
           tags={tags}
         />
-        <div className={styles["side-content-mobile-bbs"]}>
-          <Search type="news" />
-
-          {/* <Type useChecklist={false} title="Kategori" dataDropdown={category} /> */}
-        </div>
 
         <div className={styles["side-content-bbs"]}>
           <Search type="news" />
