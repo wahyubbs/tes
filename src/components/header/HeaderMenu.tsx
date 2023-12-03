@@ -33,6 +33,7 @@ async function HeaderMenu({
           {bgImage && (
             <Image
               priority={true}
+              unoptimized
               alt={"headermenu"}
               src={`${
                 process.env.NEXT_PUBLIC_DEVELOPMENT_URL_IMG

@@ -34,6 +34,7 @@ function NewsContent({
           <div className={styles["image-news-bbs"]}>
             <Image
               alt="news"
+              unoptimized
               src={`${
                 process.env.NEXT_PUBLIC_DEVELOPMENT_URL_IMG
                   ? process.env.NEXT_PUBLIC_DEVELOPMENT_URL_IMG

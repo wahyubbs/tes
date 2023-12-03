@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { HeaderMenuType } from "@/models/HeaderMenuType";
@@ -9,7 +8,6 @@ import Button from "@/components/buttons/Button";
 import { ButtonType } from "@/models/ButtonType";
 import styles from "@/styles/products/content.module.scss";
 import { handleOnError } from "@/components/utils/handleImageError";
-import { useContextProvider } from "@/context/ContextProvider";
 import Loading from "@/components/utils/Loading";
 
 function ProductContent({
@@ -27,6 +25,7 @@ function ProductContent({
           <div className={styles["image-product-bbs"]}>
             <Image
               alt="produk"
+              unoptimized
               src={`${
                 process.env.NEXT_PUBLIC_DEVELOPMENT_URL_IMG
                   ? process.env.NEXT_PUBLIC_DEVELOPMENT_URL_IMG

@@ -11,6 +11,7 @@ function HistorySection({ dataHistory }: { dataHistory: any }) {
       <>
         <div className={styles["img-bbs"]}>
           <Image
+            unoptimized
             onError={handleOnError}
             alt="history"
             src={`${

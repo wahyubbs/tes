@@ -1,4 +1,3 @@
-"use server";
 
 import { ethosViewApi } from "./ethosAPI";
 

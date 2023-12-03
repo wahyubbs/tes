@@ -44,6 +44,7 @@ function CardNews({
           onError={handleOnError}
           alt="news"
           fill={true}
+          unoptimized
           priority={priority}
           sizes="100vw"
           src={`${

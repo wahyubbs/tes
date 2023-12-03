@@ -33,6 +33,7 @@ function Partners() {
               rel="noopener noreferrer"
             >
               <Image
+                unoptimized
                 onError={handleOnError}
                 src={`${
                   process.env.NEXT_PUBLIC_DEVELOPMENT_URL_IMG
@@ -47,6 +48,7 @@ function Partners() {
           ) : (
             <Link className={styles["img-bbs"]} key={index} href="/nolink">
               <Image
+                unoptimized
                 priority={true}
                 onError={handleOnError}
                 src={data.image}

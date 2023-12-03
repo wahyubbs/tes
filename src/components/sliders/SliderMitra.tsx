@@ -85,6 +85,7 @@ function SliderMitra({ dataMitra }: { dataMitra: any[] }) {
                     : process.env.NEXT_PUBLIC_URL_IMG
                 }${data.imagenya}`}
                 fill={true}
+                unoptimized
                 sizes="100vw"
                 alt="partnership"
               />
@@ -95,7 +96,7 @@ function SliderMitra({ dataMitra }: { dataMitra: any[] }) {
                 onError={handleOnError}
                 src={data.image}
                 fill={true}
-                priority={true}
+                unoptimized
                 sizes="100vw"
                 alt="partnership"
               />

@@ -45,6 +45,7 @@ function CardProduct({
           onError={handleOnError}
           alt="produk"
           fill={true}
+          unoptimized
           priority={priority}
           sizes="100vw"
           src={`${

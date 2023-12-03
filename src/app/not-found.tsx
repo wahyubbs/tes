@@ -17,7 +17,7 @@ async function Index() {
       <div className={styles["content-bbs"]}>
         <h1>Page not found!</h1>
         <p>
-          {`We're sorry, the page you requested could no be found.`}
+          {`We're sorry, the page you requested could not be found.`}
           <br /> Please go back to the previous page.
         </p>
         <Button

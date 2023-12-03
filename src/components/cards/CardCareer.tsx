@@ -22,6 +22,7 @@ function CardCareer({ imgUrl, linkURL }: { imgUrl: string; linkURL: string }) {
             onError={handleOnError}
             alt="carrer"
             fill={true}
+            unoptimized
             priority={true}
             sizes="100vw"
             src={`${
